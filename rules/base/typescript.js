@@ -251,7 +251,7 @@ module.exports = {
     "default-case": "off",
     "@typescript-eslint/switch-exhaustiveness-check": "error",
 
-    // "@typescript-eslint/type-annotation-spacing": "error",
+    "@typescript-eslint/type-annotation-spacing": "error",
 
     "consistent-return": "off",
 

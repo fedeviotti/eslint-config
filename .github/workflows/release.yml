@@ -34,6 +34,7 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: "@fedeviotti"
       - run: npm ci
-      - run: npx semantic-release
+      - name: Release
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        run: npx semantic-release

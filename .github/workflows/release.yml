@@ -28,12 +28,15 @@ jobs:
       pull-requests: write
     steps:
       - uses: actions/checkout@v3
+      - run: npm ci
       - uses: actions/setup-node@v3
         with:
           node-version-file: ".nvmrc"
           registry-url: https://npm.pkg.github.com/
           scope: "@fedeviotti"
-      - run: npm ci
       - run: npx semantic-release
         env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.GH_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}

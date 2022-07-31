@@ -33,6 +33,9 @@ jobs:
           node-version-file: ".nvmrc"
           registry-url: https://npm.pkg.github.com/
           scope: "@fedeviotti"
+          env:
+            GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+            NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: npm ci
       - run: npx semantic-release
         env:

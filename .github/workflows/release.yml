@@ -8,6 +8,9 @@ on:
     branches:
     - master
 
+env:
+  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -35,6 +38,4 @@ jobs:
           scope: "@fedeviotti"
       - run: npm ci
       - name: Release
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: npx semantic-release

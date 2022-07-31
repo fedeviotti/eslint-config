@@ -35,3 +35,5 @@ jobs:
           scope: "@fedeviotti"
       - run: npm ci
       - run: npx semantic-release
+        env:
+          GH_TOKEN: ${{ secret.GH_TOKEN }}

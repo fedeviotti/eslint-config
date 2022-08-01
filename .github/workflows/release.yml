@@ -27,4 +27,4 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: "@fedeviotti"
       - run: npm ci
-      - run: npm publish
+      - run: npx semantic-release

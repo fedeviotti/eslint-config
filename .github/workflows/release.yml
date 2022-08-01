@@ -13,28 +13,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
         with:
-          node-version-file: ".nvmrc"
-      - run: npm ci
-
-  publish-gpr:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      issues: write
-      packages: write
-      pull-requests: write
-    steps:
-      - uses: actions/checkout@v3
+          fetch-depth: 0
       - run: npm ci
       - uses: actions/setup-node@v3
         with:
           node-version-file: ".nvmrc"
           registry-url: https://npm.pkg.github.com/
           scope: "@fedeviotti"
-      - run: npm run release
+      - run: npm ci
+      - run: npm publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}

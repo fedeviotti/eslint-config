@@ -11,7 +11,9 @@
     "url": "https://github.com/fedeviotti/eslint-config.git"
   },
   "scripts": {
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "publish": "npm publish",
+    "release": "npx semantic-release"
   },
   "license": "ISC",
   "dependencies": {

@@ -34,7 +34,7 @@ jobs:
           node-version-file: ".nvmrc"
           registry-url: https://npm.pkg.github.com/
           scope: "@fedeviotti"
-      - run: npx semantic-release
+      - run: npm semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
